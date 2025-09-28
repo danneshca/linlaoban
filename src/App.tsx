@@ -7,7 +7,7 @@ import HRConsultantChat from "@/pages/HRConsultantChat";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/linlaoban">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/settings" element={<Settings />} />

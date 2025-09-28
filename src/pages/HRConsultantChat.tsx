@@ -158,11 +158,11 @@ const HRConsultantChat: React.FC = () => {
       
       console.log('=== 人事顾问 Coze 聊天客户端初始化开始 ===');
       
-      // 检查环境变量
-      const token = import.meta.env.VITE_COZE_SAT_TOKEN;
+      // 使用硬编码的 token
+      const token = 'sat_P9aesxbg2IKXyDuS70T9ArcaaERxCV2adE7EEtOgbs0ju3BVZ3TDh57JKHjQ4ZBP';
       const botId = '7555030161654366235'; // 使用用户提供的人事顾问bot_id
       
-      console.log('环境变量检查:', {
+      console.log('Token 检查:', {
         hasToken: !!token,
         tokenLength: token?.length || 0,
         botId: botId,
@@ -170,11 +170,11 @@ const HRConsultantChat: React.FC = () => {
       });
       
       if (!token) {
-        throw new Error('VITE_COZE_SAT_TOKEN 环境变量未配置，请在 .env.local 文件中添加有效的 Coze SAT Token');
+        throw new Error('Coze SAT Token 未配置');
       }
       
       if (token.length < 10) {
-        throw new Error('VITE_COZE_SAT_TOKEN 格式不正确，请检查 Token 是否完整');
+        throw new Error('Coze SAT Token 格式不正确，请检查 Token 是否完整');
       }
       
       console.log('开始等待 Coze SDK 加载...');

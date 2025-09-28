@@ -53,7 +53,10 @@ class CozeService {
 
       await this.initialize();
 
-      const token = import.meta.env.VITE_COZE_SAT_TOKEN;
+      // 使用硬编码的 token
+      const token = 'sat_P9aesxbg2IKXyDuS70T9ArcaaERxCV2adE7EEtOgbs0ju3BVZ3TDh57JKHjQ4ZBP';
+      const botId = '7554346454786113571';
+      
       if (!token) {
         throw new Error('Coze SAT Token 未配置');
       }
@@ -61,7 +64,7 @@ class CozeService {
       // 创建新的聊天客户端实例
       const config: CozeConfig = {
         config: {
-          botId: '7554346454786113571', // 使用用户提供的 bot_id
+          botId: botId, // 使用用户提供的 bot_id
           isIframe: false,
           disableAnalytics: true,
           disableTelemetry: true,
